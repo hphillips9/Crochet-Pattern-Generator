@@ -38,7 +38,6 @@ def create_coloured_image(image_path, grid_size, num_of_colours):
     quantized_image = Image.fromarray(new_pixels.astype('uint8'), 'RGB')
     return quantized_image, hex_colours
 
-grid, colours = create_coloured_image(r'C:\Users\harry\OneDrive\Pictures\lightning.jpg', (50,50), 8)
 
 def create_pattern(quantized_image):
     pixel_data = np.array(quantized_image)
@@ -60,4 +59,3 @@ def create_pattern(quantized_image):
     grid_image.save('static/pattern.png')
     return grid_image
 
-grid_done = create_pattern(grid)
