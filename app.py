@@ -32,7 +32,7 @@ def process_image():
         num_rows = int(request.form['num_rows'])
         num_cols = int(request.form['num_cols'])
 
-        processed_image, colours = create_coloured_image(filepath, grid_size=(num_rows,num_cols), num_of_colours=num_of_colours)
+        processed_image, colours = create_coloured_image(filepath, grid_size=(num_cols,num_rows), num_of_colours=num_of_colours)
         processed_grid = create_pattern(processed_image)
         img_io = io.BytesIO()
         processed_grid.save(img_io, 'PNG')
