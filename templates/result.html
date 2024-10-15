@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Pattern Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your Crochet Pattern</h1>
+
+        <!-- Display the pattern image -->
+        <img src="{{ url_for('static', filename='pattern.png') }}" alt="Processed Crochet Pattern">
+
+        
+
+        <h2>Colours Used in the Pattern:</h2>
+
+        <!-- Loop through the colors and display each as a swatch -->
+        <div class="color-swatches">
+            {% for color in colors %}
+            <div class="color-swatch-wrapper">
+                <div class="color-swatch" style="background-color: {{ color }};"></div>
+            </div>  
+            {% endfor %}
+        </div>
+
+        <h2>Download Your Pattern Here:</h2>
+        <div class="download-section">
+            <a href="{{ url_for('static', filename='pattern.png') }}" class="download-link" download="crochet_pattern.png">Download Pattern</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Crochet Pattern Generator
+    </footer>
+</body>
+</html>

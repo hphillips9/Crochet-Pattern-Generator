@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Pattern Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Crochet Pattern Generator</h1>
+    <form action="/process" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload an image:</label><br>
+        <input type="file" id="file" name="file" accept="image/*" required><br><br>
+        
+        <label for="num_of_colours">Number of Colours:</label>
+        <input type="number" id="num_of_colours" name="num_of_colours" min="1" max="50" value="8" required><br><br>
+
+        <label for="num_rows">Number Of Rows:</label>
+        <input type="number" id="num_rows" name="num_rows" min="1" max = "100" value="50" required><br><br>
+
+        <label for="num_cols">Number Of Columns:</label>
+        <input type="number" id="num_cols" name="num_cols" min="1" max = "100" value="50" required><br><br>
+
+        <input type="submit" value="Generate Pattern">
+    </form>
+</body>
+</html>
