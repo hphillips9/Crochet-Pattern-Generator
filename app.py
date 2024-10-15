@@ -23,7 +23,8 @@ def process_image():
     if file.filename == '':
         return "No file selected!", 400
     if file:
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+        os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+        filepath = os.path.join(UPLOAD_FOLDER, file.filename)
         file.save(filepath)
 
         num_of_colours = int(request.form['num_of_colours'])
