@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Pattern Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Crochet Pattern Generator</h1>
+    <input type="file" id="imageInput" accept="image/*">
+    <input type="number" id="numColors" value="5" min="2" max="20">
+    <button onclick="generatePattern()">Generate Pattern</button>
+
+    <p id="colorPalette"></p>
+    <canvas id="patternCanvas"></canvas>
+
+    <script src="js/kmeans.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
